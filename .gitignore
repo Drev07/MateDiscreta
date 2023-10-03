@@ -1,6 +1,2 @@
-# Ignorar archivos de compilación generados por DevC++
-*.exe
-*.o
-*.a
-*.dll
+
 
