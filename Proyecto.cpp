@@ -7,7 +7,7 @@ using namespace std;
 
  double factorial(int n, int r){
      double  f=1.0, fr=1.0;
-     long totalfinal = 0, total = 0, tf =0;
+     double totalfinal = 0, total = 0, tf =0;
      /*factorial n*/
     for(i=n; i>=1; i--){
         f *=i;   
@@ -21,12 +21,11 @@ using namespace std;
         cout<<"total   de resta   "<<fn<<endl;
           /*factorial n-r*/
         for(int b= total ; b>=1; b--){
-            tf*= b;   
+            tf = b *tf;   
             cout<<"coutor r: "<<b;
         }
-        cout<<"factorial de la resta n-r:"<<tf<<endl;  
-        cout<<"factorial n: "<<f<<endl;
-        cout<<"factorial r: "<<tf<<endl;
+        cout<<"total del factorial "<<tf<<endl;
+       
         totalfinal = f/tf;
         cout<<"total del factorial "<<totalfinal<<endl;
         return totalfinal;
