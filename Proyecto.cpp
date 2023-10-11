@@ -1,46 +1,109 @@
-#include<iostream>
-#include<math.h>
-#include<string>
+#include <iostream>
+#include <string>
 
 using namespace std;
- int r, n,  i, fn=0; 
 
- double factorial(int n, int r){
-     double  f=1.0, fr=1.0;
-     double totalfinal = 0, total = 0, tf =0;
-     /*factorial n*/
-    for(i=n; i>=1; i--){
-        f *=i;   
+// Función recursiva para calcular el factorial de un número
+int factorial(int n) 
+{
+    if (n == 0) 
+    {
+        return 1;
+    } 
+    else 
+    {
+        return n * factorial(n - 1);
     }
-    cout<<"datos de n "<<f<<endl;
-        total = n-r;
-        /*el abs es para eliminar los signos negativos de la respuesta*/
-       fn += abs(total);
-       cout<<"total: "<<total;
-    
-        cout<<"total   de resta   "<<fn<<endl;
-          /*factorial n-r*/
-        for(int b= total ; b>=1; b--){
-            tf = b *tf;   
-            cout<<"coutor r: "<<b;
-        }
-        cout<<"total del factorial "<<tf<<endl;
-       
-        totalfinal = f/tf;
-        cout<<"total del factorial "<<totalfinal<<endl;
-        return totalfinal;
 }
 
-int main(){
-    cout<<"ingrese valor de n ";
-    cin>>n;
-    cout<<"ingrese valor de r ";
-    cin>>r;
-     cout<<"si llega ";
-    double resufactorial = factorial(n, r);
-   cout<<""<<resufactorial<<endl;
+// Función para calcular el valor de m!/n!(m-n)!
+int division_factorial(int m, int n) 
+{
+    int numerador = factorial(m);
+    int denominador = factorial(n) * factorial(m - n);
+    return numerador / denominador;
+}
+int permutaciones(int n, int r){
+    int p=1;
+    for(int i=n; i > n-r; i--){
+        p *=i;
+    }
+    cout<<"el total de permutacion es: "<<p<<endl;
+    
+    return p;
 
+}
+int trianguloPascal(int n, int k){
+   if (k == 0 || k == n) {
+        return 1;
+    } else {
+        return trianguloPascal(n - 1, k - 1) + trianguloPascal(n - 1, k);
+    }
+
+}
+int main() 
+{
+    int m, n, op, resultado, r, coeficiente;
+   
+    do 
+    {
+        cout << "Ingrese opción: " << endl
+        << "1.Combinaciones" << endl
+        << "2. permutaciones " << endl
+        << "3. triangulo Pascal " << endl
+        << "0. Salir" << endl;
+        
+       
+        cin >> op;
+
+        switch (op) 
+        {
+            case 1:
+                cout << "Ingrese el valor de m: ";
+                cin >> m;
+                cout << "Ingrese el valor de n: ";
+                cin >> n; 
+                // Cálculo de m!/n!(m-n)! y presentación del resultado
+                 resultado = division_factorial(m, n);
+                cout << "El valor de m!/n!(m-n)! es: " << resultado << endl;
+                break;
+            case 2:
+                cout << "Ingrese el valor de m: ";
+                cin >> m;
+                cout << "Ingrese el valor de n: ";
+                cin >> r; 
+                resultado = permutaciones(m, r);
+                cout << "El valor de p(m,r)=m!(n-r)! es: " << resultado << endl;
+
+            break;
+            case 3:
+                cout << "Ingrese el valor de m: ";
+                cin >> n;
+                cout << "Ingrese el valor de n: ";
+                cin >> m; 
+                for (int i = 0; i < n; i++) {
+                // Agregar espacios para la alineación
+                for (int j = 0; j < n - i; j++) {
+                    cout << " ";
+                }
+                for (int j = 0; j <= i; j++) {
+                     coeficiente = trianguloPascal(i, j);
+                    cout << coeficiente << " ";
+                }
+
+        cout << endl;
+    }
+
+            break;
+            case 0:
+                cout << "****GRACIAS POR USAR NUESTRO PROGRAMA****" << endl;
+                break;
+            default:
+                cout << "Ingresa una opción válida" << endl;
+        }
+       
+
+    } while (op != 0);
 
     return 0;
 }
-
