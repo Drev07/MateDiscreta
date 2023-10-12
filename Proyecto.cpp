@@ -47,7 +47,7 @@ int main()
    
     do 
     {
-        cout << "Ingrese opción: " << endl
+        cout << "Ingrese opcion: " << endl
         << "1.Combinaciones" << endl
         << "2. permutaciones " << endl
         << "3. triangulo Pascal " << endl
@@ -68,21 +68,19 @@ int main()
                 cout << "El valor de m!/n!(m-n)! es: " << resultado << endl;
                 break;
             case 2:
-                cout << "Ingrese el valor de m: ";
-                cin >> m;
                 cout << "Ingrese el valor de n: ";
+                cin >> n;
+                cout << "Ingrese el valor de r: ";
                 cin >> r; 
-                resultado = permutaciones(m, r);
-                cout << "El valor de p(m,r)=m!(n-r)! es: " << resultado << endl;
+                resultado = permutaciones(n, r);
+                cout << "El valor de p(n,r)=n!/(n-r)! es: " << resultado << endl;
 
             break;
             case 3:
-                cout << "Ingrese el valor de m: ";
-                cin >> n;
-                cout << "Ingrese el valor de n: ";
-                cin >> m; 
+                cout << "Ingrese el valor de n: ";       
+                cin >> n; 
                 for (int i = 0; i < n; i++) {
-                // Agregar espacios para la alineación
+                // Agregar espacios para la alineacion
                 for (int j = 0; j < n - i; j++) {
                     cout << " ";
                 }
@@ -96,10 +94,10 @@ int main()
 
             break;
             case 0:
-                cout << "****GRACIAS POR USAR NUESTRO PROGRAMA****" << endl;
+                cout << "*GRACIAS POR USAR NUESTRO PROGRAMA*" << endl;
                 break;
             default:
-                cout << "Ingresa una opción válida" << endl;
+                cout << "Ingresa una opcion valida" << endl;
         }
        
 
