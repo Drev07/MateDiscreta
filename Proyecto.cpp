@@ -28,7 +28,7 @@ int permutaciones(int n, int r){
     for(int i=n; i > n-r; i--){
         p *=i;
     }
-    cout<<"el total de permutacion es: "<<p<<endl;
+  
     
     return p;
 
