@@ -78,8 +78,9 @@ int main()
             break;
             case 3:
                 cout << "Ingrese el valor de n: ";       
-                cin >> n; 
-                for (int i = 0; i < n; i++) {
+                cin >> n;
+				if(n<=10){ 
+				for (int i = 0; i < n; i++) {
                 // Agregar espacios para la alineacion
                 for (int j = 0; j < n - i; j++) {
                     cout << " ";
@@ -90,7 +91,10 @@ int main()
                 }
 
         cout << endl;
-    }
+				}
+    }else{
+    cout << "ingrese un numero menor a 10\n";
+	}
 
             break;
             case 0:
