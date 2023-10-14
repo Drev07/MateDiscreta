@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// Función recursiva para calcular el factorial de un número
+// Funcion recursiva para calcular el factorial de un numero
 int factorial(int n) 
 {
     if (n == 0) 
@@ -16,7 +16,7 @@ int factorial(int n)
     }
 }
 
-// Función para calcular el valor de m!/n!(m-n)!
+// Funcion para calcular el valor de m!/n!(m-n)!
 int division_factorial(int m, int n) 
 {
     int numerador = factorial(m);
@@ -63,7 +63,7 @@ int main()
                 cin >> m;
                 cout << "Ingrese el valor de n: ";
                 cin >> n; 
-                // Cálculo de m!/n!(m-n)! y presentación del resultado
+                // Calculo de m!/n!(m-n)! y presentacion del resultado
                  resultado = division_factorial(m, n);
                 cout << "El valor de m!/n!(m-n)! es: " << resultado << endl;
                 break;
